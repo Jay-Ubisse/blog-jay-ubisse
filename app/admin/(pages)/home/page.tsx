@@ -1,7 +1,7 @@
 const AddPost = () => {
     return ( 
         <div>
-            Hello
+            Hello Home
         </div>
      );
 }

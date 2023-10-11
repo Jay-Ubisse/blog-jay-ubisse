@@ -10,10 +10,10 @@ import {
   MagnifyingGlass,
 } from "@phosphor-icons/react";
 import Image from "next/image";
-
-import { Header } from "../components/Header"
-import logotipo from "@/app/assets/img/logo-2.png";
 import { FormEvent } from "react";
+
+import { Header } from "@/components/Header"
+import logotipo from "@/app/assets/img/logo-2.png";
 
 async function fetchPosts() {
   const res = await fetch("http://localhost:3000/api/blog", {
