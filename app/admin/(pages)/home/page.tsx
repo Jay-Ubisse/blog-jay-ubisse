@@ -18,7 +18,7 @@ const Home = () => {
                         <span className="text-lg font-medium">Novo Post</span>
                     </Link>
                     <Link
-                        href="/admin/add"
+                        href="/admin/posts"
                         className="w-52 h-28 border border-violet-700 rounded-md text-violet-700 hover:text-white hover:bg-violet-700 flex justify-center items-center gap-5"
                     >
                         <span><ListBullets size={32} weight="fill" /></span>

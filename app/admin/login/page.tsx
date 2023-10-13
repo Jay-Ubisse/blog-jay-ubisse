@@ -27,7 +27,7 @@ const LoginPage = () => {
             <main className="h-screen flex justify-center items-center">
                 <form
                     onSubmit={handleSubmit(onSubmit)}
-                    className="laptop:w-1/3 mobile:w-[95%] py-5 laptop:border-x-2 mobile:border-b-2 laptop:border-b-0 border-violet-700 flex flex-col gap-8 rounded-lg bg-white shadow-xl shadow-slate-300 text-slate-800"
+                    className="laptop:w-1/3 mobile:w-[95%] py-5 laptop:border-l-2 mobile:border-b-2 laptop:border-b-0 border-violet-700 flex flex-col gap-8 rounded-tr-lg rounded-br-lg shadow-xl shadow-slate-300 text-slate-800 bg-slate-50"
                 >
                     <h1 className="text-violet-700 text-2xl font-semibold w-fit mx-auto pl-1">
                         Bem-vindo de volta, Joaquim!

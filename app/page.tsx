@@ -26,6 +26,55 @@ async function fetchPosts() {
   return data.posts;
 }
 
+function generateDate(date: Date) {
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  const day = date.getDate();
+  let monthName = "";
+
+  switch (month) {
+    case 1:
+        monthName = "Janeiro"
+      break;
+    case 2:
+        monthName = "Fevereiro"
+      break;
+    case 3:
+        monthName = "Março"
+      break;
+    case 4:
+        monthName = "Abril"
+      break;
+    case 5:
+        monthName = "Maio"
+      break;
+    case 6:
+        monthName = "Junho"
+      break;
+    case 7:
+        monthName = "Julho"
+      break;
+    case 8:
+        monthName = "Agosto"
+      break;
+    case 9:
+        monthName = "Setembro"
+      break;
+    case 10:
+        monthName = "Outubro"
+      break;
+    case 11:
+        monthName = "Novembro"
+      break;
+    case 12:
+        monthName = "Dezembro"
+      break;
+    default:
+      break;
+  }
+
+  return `${day} de ${monthName} de ${year}`;
+}
 export default async function Home() {
   const posts = await fetchPosts();
 
@@ -109,10 +158,10 @@ export default async function Home() {
           {posts?.map((post: any) => (
             <div className="border border-violet-700 rounded-md p-5">
               <h1 className="text-xl font-semibold mb-3">{post.title}</h1>
-              <p className="text-slate-600 font-normal text-sm mb-1">{new Date(post.date).getUTCDate()}</p>
+              <p className="text-slate-600 font-normal text-sm mb-1">{generateDate(new Date(post.date))}</p>
               <p className="text-slate-600 font-normal text-sm mb-6 underline underline-offset-2">Jay Ubisse</p>
-              <div className="max-h-">
-                <p className="text-slate-800 font-normal text-base">{post.description}</p>
+              <div className="ql-editor text-slate-800 font-normal text-base">
+                {post.description}
               </div>
               <div className="flex justify-end mt-6 max-h-20 overflow-hide">
                   <button className="bg-violet-700 px-4 py-2 rounded-md text-white hover:bg-violet-600">Ver mais</button>
