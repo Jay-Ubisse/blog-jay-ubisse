@@ -36,12 +36,13 @@ export const Header = () => {
         </div>
         <div
           className={`${
-            menuState ? "mobile:flex" : "mobile:hidden"
+            menuState ? "mobile:flex mobile:bg-white" : "mobile:hidden"
           } relative laptop:gap-2 mobile:gap-16 items-center laptop:flex laptop:flex-row-reverse mobile:flex-col laptop:bg-transparent mobile:bg-gradient-to-tr mobile:from-app-green-200 laptop:from-transparent laptop:to-transparent mobile:to-app-green-400 mobile:w-screen laptop:w-fit mobile:h-screen laptop:h-fit mobile:overflow-scroll laptop:overflow-hidden mobile:fixed laptop:relative top-0 left-0 mobile:pt-10 laptop:pt-0 z-30`}
         >
-          <div className="flex flex-row justify-between mobile:w-full laptop:w-fit">
+          <div className="flex flex-row justify-end mobile:w-full laptop:w-fit">
             <X
               size={32}
+              weight="bold"
               className="mr-5 laptop:hidden"
               onClick={() => setMenuState(false)}
             />
