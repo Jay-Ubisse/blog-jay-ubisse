@@ -16,7 +16,7 @@ async function fetchPosts() {
   return data.posts;
 }
 
-function generateDate(date: Date) {
+export function generateDate(date: Date) {
   const year = date.getFullYear();
   const month = date.getMonth();
   const day = date.getDate();
