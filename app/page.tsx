@@ -111,7 +111,7 @@ export default async function Home() {
         </section>
         <section className="laptop:w-3/4 mobile:w-[95%] mx-auto grid laptop:grid-cols-2 mobile:grid-cols-1 gap-5 py-10">
           {posts?.map((post: any) => (
-            <div className="shadow-lg shadow-slate-300 bg-slate-50 rounded-md p-5">
+            <div className="shadow-lg shadow-slate-300 bg-slate-50 rounded-md p-5" key={post.id}>
               <h1 className="text-xl font-semibold mb-3">{post.title}</h1>
               <p className="text-slate-600 font-normal text-sm mb-1">{generateDate(new Date(post.date))}</p>
               <p className="text-slate-600 font-normal text-sm mb-6 underline underline-offset-2">Jay Ubisse</p>
