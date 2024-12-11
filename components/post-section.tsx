@@ -89,14 +89,17 @@ export const PostSection = () => {
           >
             <h1 className="text-xl font-semibold mb-3">{post.title}</h1>
             <p className="text-slate-600 font-normal text-sm mb-1">
-              {generateDate(new Date(post.createdAt))}
+              {generateDate(
+                new Date(post.createdAt ? post.createdAt : new Date())
+              )}
             </p>
             <p className="text-slate-600 font-normal text-sm mb-6 underline underline-offset-2">
               Jay Ubisse
             </p>
-            <div className="ql-editor text-slate-800 font-normal text-base">
-              {post.description}
-            </div>
+            <div
+              className="ql-editor text-slate-800 font-normal text-base line-clamp-4"
+              dangerouslySetInnerHTML={{ __html: post.description }}
+            />
             <div className="flex justify-end mt-6 max-h-20 overflow-hide">
               <button className="bg-violet-700 px-4 py-2 rounded-md text-white hover:bg-violet-600">
                 Ver mais

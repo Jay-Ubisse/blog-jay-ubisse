@@ -1,8 +1,8 @@
 interface PostProps {
-  id: string;
+  id?: string;
   title: string;
   description: string;
   tags: string;
-  createdAt: Date | string;
-  updatedAt: Date | string;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
 }
