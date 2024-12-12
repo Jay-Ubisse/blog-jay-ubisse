@@ -95,6 +95,8 @@ const AddPost = () => {
             theme="snow"
             value={description}
             onChange={setDescription}
+            modules={modules}
+            formats={formats}
           />
           <button
             type="submit"
