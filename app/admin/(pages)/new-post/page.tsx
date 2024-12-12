@@ -7,6 +7,8 @@ import dynamic from "next/dynamic";
 
 import AdminHeader from "@/components/AdminHeader";
 import { generateDate } from "@/lib/generate-date";
+import toast from "react-hot-toast";
+import { addPost } from "@/services/posts";
 
 const modules = {
   toolbar: [
@@ -59,8 +61,16 @@ const NewPost = () => {
       tags: tags,
     };
 
-    const date = generateDate(new Date());
-    console.log(data, date);
+    try {
+      toast.loading("Publicando artigo...", { id: "1" });
+
+      const response = await addPost({ data });
+
+      toast.success("Artigo publicado com sucesso!", { id: "1" });
+    } catch (error) {
+      toast.error("Ocorreu um erro ao publicar artigo", { id: "1" });
+      console.log(error);
+    }
   }
 
   return (
