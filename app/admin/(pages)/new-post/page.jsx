@@ -40,9 +40,9 @@ const NewPost = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
-  async function handleSubmit(event: any) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    const data: PostProps = {
+    const data = {
       title: title,
       description: description,
       tags: tags,
