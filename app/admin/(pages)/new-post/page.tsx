@@ -1,7 +1,8 @@
 "use client";
 
-import React, { Fragment, useState } from "react";
-import ReactQuill from "react-quill-new";
+import dynamic from "next/dynamic";
+import React, { Fragment, useMemo, useState } from "react";
+
 import "react-quill-new/dist/quill.snow.css";
 import AdminHeader from "@/components/AdminHeader";
 import { addPost } from "@/services/posts";
@@ -36,6 +37,10 @@ const formats = [
 ];
 
 const AddPost = () => {
+  const ReactQuill = useMemo(
+    () => dynamic(() => import("react-quill"), { ssr: false }),
+    []
+  );
   const [description, setDescription] = useState("");
   const [tags, setTags] = useState("");
   const [title, setTitle] = useState("");
