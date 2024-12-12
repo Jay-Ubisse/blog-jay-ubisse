@@ -1,9 +1,9 @@
 "use client";
-import React, { Fragment, useRef, useState } from "react";
+
+import React, { Fragment, useState } from "react";
 import ReactQuill from "react-quill-new";
 import "react-quill-new/dist/quill.snow.css";
 import AdminHeader from "@/components/AdminHeader";
-import { Toaster, toast } from "react-hot-toast";
 import { addPost } from "@/services/posts";
 
 const modules = {
@@ -57,7 +57,6 @@ const AddPost = () => {
   }
   return (
     <Fragment>
-      <Toaster />
       <AdminHeader />
       <main className="h-[calc(100vh-5rem)] flex justify-center items-center">
         <form
