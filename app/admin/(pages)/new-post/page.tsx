@@ -1,11 +1,10 @@
 "use client";
 
-import React, { Fragment, useState } from "react";
-
+import { useState } from "react";
+import ReactQuill from "react-quill-new";
 import "react-quill-new/dist/quill.snow.css";
+
 import AdminHeader from "@/components/AdminHeader";
-import { addPost } from "@/services/posts";
-import ReactQuill from "react-quill";
 
 const modules = {
   toolbar: [
@@ -36,10 +35,10 @@ const formats = [
   "image",
 ];
 
-const AddPost = () => {
-  const [description, setDescription] = useState("");
+const NewPost = () => {
   const [tags, setTags] = useState("");
   const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
 
   async function handleSubmit(event: any) {
     event.preventDefault();
@@ -49,15 +48,11 @@ const AddPost = () => {
       tags: tags,
     };
 
-    try {
-      const response = await addPost({ data });
-      alert("Artigo publicado com sucesso");
-    } catch (error) {
-      console.log(error);
-    }
+    console.log(data);
   }
+
   return (
-    <Fragment>
+    <>
       <AdminHeader />
       <main className="h-[calc(100vh-5rem)] flex justify-center items-center">
         <form
@@ -91,8 +86,6 @@ const AddPost = () => {
             theme="snow"
             value={description}
             onChange={setDescription}
-            modules={modules}
-            formats={formats}
           />
           <button
             type="submit"
@@ -102,8 +95,8 @@ const AddPost = () => {
           </button>
         </form>
       </main>
-    </Fragment>
+    </>
   );
 };
 
-export default AddPost;
+export default NewPost;

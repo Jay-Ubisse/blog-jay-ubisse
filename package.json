@@ -15,12 +15,12 @@
     "axios": "^1.7.9",
     "lucide-react": "^0.468.0",
     "next": "15.1.0",
+    "quill": "^2.0.3",
     "react": "^19",
     "react-dom": "^19",
     "react-hook-form": "^7.54.0",
     "react-hot-toast": "^2.4.1",
     "react-query": "^3.39.3",
-    "react-quill": "^2.0.0",
     "react-quill-new": "^3.3.3"
   },
   "devDependencies": {
