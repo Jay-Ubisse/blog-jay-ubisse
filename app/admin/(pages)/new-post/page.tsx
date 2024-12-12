@@ -86,13 +86,11 @@ const AddPost = () => {
             id="tags"
             className="bg-transparent py-1 px-2 w-full mx-auto border-b border-slate-800 hover:border-violet-700 hover:border-b-2 focus:outline-none focus:border-violet-700 focus:border-b-2"
           />
-          {/** <ReactQuill
+          <ReactQuill
             theme="snow"
             value={description}
             onChange={setDescription}
-            modules={modules}
-            formats={formats}
-          /> */}
+          />
           <button
             type="submit"
             className="border-2 text-white bg-violet-700 border-violet-700 w-full mx-auto px-2 py-1 font-medium text-base hover:border-violet-600 hover:bg-violet-600"
