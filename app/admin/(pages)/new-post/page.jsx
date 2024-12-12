@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import ReactQuill from "react-quill-new";
+import { useState, useMemo } from "react";
+//import ReactQuill from "react-quill-new";
 import "react-quill-new/dist/quill.snow.css";
+import dynamic from "next/dynamic";
 
 import AdminHeader from "@/components/AdminHeader";
 
@@ -39,6 +40,15 @@ const NewPost = () => {
   const [tags, setTags] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+
+  const ReactQuill = useMemo(
+    () =>
+      dynamic(() => import("react-quill-new"), {
+        ssr: false,
+        loading: () => <p>Loading...</p>,
+      }),
+    []
+  );
 
   async function handleSubmit(event) {
     event.preventDefault();
