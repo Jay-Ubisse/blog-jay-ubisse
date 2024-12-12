@@ -6,6 +6,7 @@ import "react-quill-new/dist/quill.snow.css";
 import dynamic from "next/dynamic";
 
 import AdminHeader from "@/components/AdminHeader";
+import { generateDate } from "@/lib/generate-date";
 
 const modules = {
   toolbar: [
@@ -50,15 +51,16 @@ const NewPost = () => {
     []
   );
 
-  async function handleSubmit(event) {
+  async function handleSubmit(event: any) {
     event.preventDefault();
-    const data = {
+    const data: PostProps = {
       title: title,
       description: description,
       tags: tags,
     };
 
-    console.log(data);
+    const date = generateDate(new Date());
+    console.log(data, date);
   }
 
   return (
